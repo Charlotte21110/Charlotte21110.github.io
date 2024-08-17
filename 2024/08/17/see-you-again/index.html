@@ -4,8 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="此心安处，是有你的地方, 然然和鉴猫猫">
-    <meta name="description" content="顺序二 把然然的尾巴打个结">
+    <meta name="keywords" content="flex布局, 海棠听风">
+    <meta name="description" content="六个大属性
+flex-direction 决定主轴位置，横着来还是竖着来
+flex-wrap 决定怎么排列，能不能换行
+flex-flow 就是上面两个的简写方式 row nowrap默认值
+justify-content 项目在主轴的对齐">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +21,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>此心安处，是有你的地方 | 然然和鉴猫猫</title>
+    <title>flex布局 | 海棠听风</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <style>
@@ -73,7 +77,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">然然和鉴猫猫</span>
+                    <span class="logo-span">海棠听风</span>
                 </a>
             </div>
             
@@ -87,7 +91,7 @@
       
       <i class="fa-regular fa-heart" style="zoom: 0.6;"></i>
       
-      <span>相识</span>
+      <span>主页</span>
     </a>
     
   </li>
@@ -98,7 +102,7 @@
       
       <i class="fa-regular fa-face-kiss-beam" style="zoom: 0.6;"></i>
       
-      <span>心动词云</span>
+      <span>标签</span>
     </a>
     
   </li>
@@ -109,7 +113,7 @@
       
       <i class="fa-solid fa-heart" style="zoom: 0.6;"></i>
       
-      <span>小标签</span>
+      <span>目录</span>
     </a>
     
   </li>
@@ -120,7 +124,7 @@
       
       <i class="fa-solid fa-book" style="zoom: 0.6;"></i>
       
-      <span>回忆线</span>
+      <span>时间线</span>
     </a>
     
   </li>
@@ -131,7 +135,7 @@
       
       <i class="fa-solid fa-heart-pulse" style="zoom: 0.6;"></i>
       
-      <span>豹豹</span>
+      <span>关于我</span>
     </a>
     
   </li>
@@ -142,7 +146,7 @@
       
       <i class="fa-regular fa-heart" style="zoom: 0.6;"></i>
       
-      <span>悄悄话</span>
+      <span>内容</span>
     </a>
     
   </li>
@@ -153,7 +157,7 @@
       
       <i class="fa-solid fa-gift" style="zoom: 0.6;"></i>
       
-      <span>敲一下脑袋</span>
+      <span>私藏网站</span>
     </a>
     
   </li>
@@ -177,10 +181,10 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">然然和鉴猫猫</div>
+        <div class="logo-name">海棠听风</div>
         <div class="logo-desc">
             
-            相信以后都能幸福地在一起
+            往前走啊，想什么呢
             
         </div>
     </div>
@@ -193,7 +197,7 @@
 			
 			    <i class="fa-fw fa-regular fa-heart"></i>
 			
-			相识
+			主页
 		</a>
           
         </li>
@@ -204,7 +208,7 @@
 			
 			    <i class="fa-fw fa-regular fa-face-kiss-beam"></i>
 			
-			心动词云
+			标签
 		</a>
           
         </li>
@@ -215,7 +219,7 @@
 			
 			    <i class="fa-fw fa-solid fa-heart"></i>
 			
-			小标签
+			目录
 		</a>
           
         </li>
@@ -226,7 +230,7 @@
 			
 			    <i class="fa-fw fa-solid fa-book"></i>
 			
-			回忆线
+			时间线
 		</a>
           
         </li>
@@ -237,7 +241,7 @@
 			
 			    <i class="fa-fw fa-solid fa-heart-pulse"></i>
 			
-			豹豹
+			关于我
 		</a>
           
         </li>
@@ -248,7 +252,7 @@
 			
 			    <i class="fa-fw fa-regular fa-heart"></i>
 			
-			悄悄话
+			内容
 		</a>
           
         </li>
@@ -259,7 +263,7 @@
 			
 			    <i class="fa-fw fa-solid fa-gift"></i>
 			
-			敲一下脑袋
+			私藏网站
 		</a>
           
         </li>
@@ -343,12 +347,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://s2.loli.net/2023/02/12/G3grki4Q6NCVBwH.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">此心安处，是有你的地方</h1>
+                    <h1 class="description center-align post-title">flex布局</h1>
                 </div>
             </div>
         </div>
@@ -370,33 +374,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E7%94%9F%E6%B4%BB/">
-                                <span class="chip bg-color">生活</span>
-                            </a>
-                        
-                            <a href="/tags/%E7%8C%AB%E7%8C%AB%E7%94%9F%E6%B0%94/">
-                                <span class="chip bg-color">猫猫生气</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%81%8B%E7%88%B1/">
-                                <span class="chip bg-color">恋爱</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E6%84%9F%E6%83%85/" class="post-category">
-                                感情
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -405,7 +388,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-02-12
+                    2024-08-17
                 </div>
                 
 
@@ -426,104 +409,28 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>去年情人节的时候给我们画的一幅画</p>
-<p>也是去年差不多这个的时候</p>
-<p>我给我们画了一张情侣头像</p>
-<p>目前找不到第二章上色这么精致的了QWQ</p>
-<p>当时因为是给自己人画更上心了一点</p>
-<img src="https://s2.loli.net/2023/02/13/Q8DBYXFp7Z56eic.png" alt="暖" style="zoom: 25%;" />
+                <h3 id="六个大属性"><a href="#六个大属性" class="headerlink" title="六个大属性"></a>六个大属性</h3><ul>
+<li>flex-direction 决定主轴位置，横着来还是竖着来</li>
+<li>flex-wrap 决定怎么排列，能不能换行</li>
+<li>flex-flow 就是上面两个的简写方式 row nowrap默认值</li>
+<li>justify-content 项目在主轴的对齐方式</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-start | flex-end | center | space-between | space-around;</span><br><span class="line">&#125;</span><br><span class="line">// 前面 后面 中间 两边贴着等间距 两边不贴着等间距</span><br></pre></td></tr></table></figure>
 
-<hr>
-<p>大一下学期开学前后</p>
-<p>带我玩了一段时间的ff14</p>
-<p>我们在艾欧泽亚里逛了几次</p>
-<p>好开心ヾ(o´∀｀o)ﾉ </p>
-<p>然然还给了不少零花钱</p>
-<p>挺喜欢这个游戏的~</p>
-<p>虽然刚开始过2.0和3.0主线的时候有超级多不懂的地方</p>
-<p>不知道自己在玩什么</p>
-<p>但是后来经常查wiki看b站攻略之类的</p>
-<p>也慢慢清楚了白魔怎么抬血更快一点</p>
-<p>机制怎么躲</p>
-<p>洗猫猫之后在各大主城到处跟幻化漂亮的玩家生气 ヽ(。&gt;д&lt;)ｐ</p>
-<p>猫娘一号的声音好好听）</p>
-<img src="https://s2.loli.net/2023/02/13/AH8fV75c9iG4ong.png" alt="路人肥肥纯粹是太可爱了" style="zoom:33%;" />
+<ul>
+<li>align-items 交叉轴上的对齐，类似手风琴吧，适合高度不一样的中间内容对齐</li>
+<li>align-conten 多根轴线的对齐，适合多内容</li>
+</ul>
+<p><strong>flex-grow 设置为1，表示该项可以在父容器内扩展，占据所有可用的额外空间</strong>。</p>
+<h3 id="子盒子里面"><a href="#子盒子里面" class="headerlink" title="子盒子里面"></a>子盒子里面</h3><ul>
+<li><code>order</code> 数值越小越往前，弄排序</li>
+<li><code>flex-grow</code> 看放大比例</li>
+<li><code>flex-shrink</code> 弄缩小比例 可弄一边固定另一边不缩小</li>
+<li><code>flex-basis</code> 计算占多余空间</li>
+<li><code>flex</code> 前三个的缩写</li>
+<li><code>align-self</code> 抽象，覆盖</li>
+</ul>
 
-<p>当时然然跟我说我不适合玩奶妈叫我不要去玩了开个红职吧</p>
-<p>那个时候我也好生气</p>
-<p>我确实不知道怎么玩把队友惹急了</p>
-<p>可我交钱了也有下本练习的权利啊！！</p>
-<p>再后来进野队的时候，有很长一段时间总是奶死人，奶轴也不对</p>
-<p>有些人骂我骂的超级难听，问我导师呢</p>
-<p>呜呜呜对不起我导师a了可以骂我但是被骂我导师</p>
-<p>前天高级四人本看见一个奶妈犯错拼命道歉的样子，像极了当时的我</p>
-<img src="https://s2.loli.net/2023/02/13/NSyZ2nUu7VBT5q9.jpg" alt="小怪死了不就不用奶了！" style="zoom:25%;" />
-
-<hr>
-<p>好久之前买的情侣套装</p>
-<p>一起挑了好久的</p>
-<p>家然那件衬衫和裤子该不会找不到了吧</p>
-<p>平时我也经常穿出去</p>
-<p>而且看到家然跟我在同一天穿的时候</p>
-<p>心里偷偷开心.jpg</p>
-<img src="https://s2.loli.net/2023/02/13/xhinOGAJITfaoCw.jpg" alt="你看右边的小萝莉像不像大冤种" style="zoom: 10%;" />
-
-<hr>
-<p>大一下开学初的时候然然总是去打电动不陪我</p>
-<p>下课就不见人了</p>
-<p>也没有来跟我逛校道</p>
-<p>有时候独自一个人在学校走着的时候</p>
-<p>会想起好多曾经一起逛的开心的时光</p>
-<p>但是这些记忆如梦般的缥缈</p>
-<p>似乎未曾存在过</p>
-<p>约出来吃饭也拒绝了</p>
-<p>也疏远了我跟一些别的朋友</p>
-<p>一直说不想出门</p>
-<p>我超级担心就总是去问你儿子</p>
-<p>把舍友整不好意思了</p>
-<img src="https://s2.loli.net/2023/02/13/MfAor9b4Wj7dGJU.jpg" alt="猫猫不理我" style="zoom:33%;" />
-
-<p>舍友说你每天都在打游戏没怎么学习</p>
-<p>那段时间赶上了国服新版本发布</p>
-<p>忙着看6.0主线了吧</p>
-<p>又忽略人</p>
-<p>(′へ&#96;、)</p>
-<p>我好像总是不能够理解然然</p>
-<p>制造了好多矛盾和误会</p>
-<p>我真的很幼稚、天真和弱小……</p>
-<p>时不时会特别想生气或者很伤心</p>
-<p>想骂一下或者发小作文之类的</p>
-<p>对方可能会很莫名其妙更不知道怎么回吧</p>
-<img src="https://s2.loli.net/2023/02/13/ViIpjxU3amtBwO6.jpg" alt="IMG_20220404_183138.jpg" style="zoom: 10%;" />
-
-<hr>
-<p>七月的时候跟几个同学一起去广州实习了</p>
-<p>然然也有来，我们制造了很多开心的回忆</p>
-<p><img src="https://s2.loli.net/2023/02/13/9YECcRKP1IvAbNU.jpg" alt="跟师兄去吃午饭"></p>
-<p>去看了看家然以前的学校</p>
-<p>（同学局习惯性保持了点距离）</p>
-<img src="https://s2.loli.net/2023/02/13/MhURL9uX7lGYqZb.jpg" alt="背影" style="zoom:25%;" />
-
-
-
-<p>窝一直觉得养猫的男生给人温柔的感觉QWQ</p>
-<img src="https://s2.loli.net/2023/02/13/28QwAb7WHgMISyr.jpg" alt="两只猫猫" style="zoom:15%;" />
-
-<p>家然抱猫猫的样子好可爱啊</p>
-<p>也好想见一下然然家里的猫猫！</p>
-<p>放假的时候去吃了一下麦当劳</p>
-<img src="https://s2.loli.net/2023/02/13/s7gZQvft2EpcaFX.jpg" alt="雪糕" style="zoom: 10%;" />
-
-<p>为什么左边那只手会自己碰过来啊.jpg</p>
-<p>还有一起去KTV</p>
-<p>然然唱了好多歌曲</p>
-<img src="https://s2.loli.net/2023/02/13/elykEuoN4d5WQat.jpg" alt="唱歌" style="zoom:10%;" />
-
-<p>窝总是很怂不敢唱~</p>
-<p>但有你在就不怕了！</p>
-<hr>
-<p>贴贴(╬◣д◢)</p>
-<img src="https://s2.loli.net/2023/02/13/iWjztnUcm6y5OaA.jpg" alt="扯扯" style="zoom:15%;" />
                 
             </div>
             <hr/>
@@ -549,7 +456,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/02/12/%E6%AD%A4%E5%BF%83%E5%AE%89%E5%A4%84%EF%BC%8C%E6%98%AF%E6%9C%89%E4%BD%A0%E7%9A%84%E5%9C%B0%E6%96%B9/">http://example.com/2022/02/12/%E6%AD%A4%E5%BF%83%E5%AE%89%E5%A4%84%EF%BC%8C%E6%98%AF%E6%9C%89%E4%BD%A0%E7%9A%84%E5%9C%B0%E6%96%B9/</a>
+                    <a href="https://github.com/2024/08/17/see-you-again/">https://github.com/2024/08/17/see-you-again/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -586,19 +493,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E7%94%9F%E6%B4%BB/">
-                                    <span class="chip bg-color">生活</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%8C%AB%E7%8C%AB%E7%94%9F%E6%B0%94/">
-                                    <span class="chip bg-color">猫猫生气</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%81%8B%E7%88%B1/">
-                                    <span class="chip bg-color">恋爱</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -674,7 +569,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2022-02-12T23-52-44',
+        id: '2024-08-17T20-54-12',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -698,7 +593,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Sat Feb 12 2022 23:52:44 GMT+0800',
+    id: 'Sat Aug 17 2024 20:54:12 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -723,9 +618,9 @@ gitment.render('gitment-content');
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'http://example.com/2022/02/12/%E6%AD%A4%E5%BF%83%E5%AE%89%E5%A4%84%EF%BC%8C%E6%98%AF%E6%9C%89%E4%BD%A0%E7%9A%84%E5%9C%B0%E6%96%B9/';
-        this.page.identifier = '/2022/02/12/%E6%AD%A4%E5%BF%83%E5%AE%89%E5%A4%84%EF%BC%8C%E6%98%AF%E6%9C%89%E4%BD%A0%E7%9A%84%E5%9C%B0%E6%96%B9/';
-        this.page.title = '此心安处，是有你的地方';
+        this.page.url = 'https://github.com/2024/08/17/see-you-again/';
+        this.page.identifier = '/2024/08/17/see-you-again/';
+        this.page.title = 'flex布局';
     };
     let disqus_shortname = '';
 
@@ -988,17 +883,18 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/01/31/hello-world/">
+                <a href="/2024/08/17/see-you-again/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="flex布局">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">flex布局</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1008,9 +904,9 @@ gitment.render('gitment-content');
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-31
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1019,14 +915,7 @@ gitment.render('gitment-content');
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%B0%9D%E8%AF%95/">
-                        <span class="chip bg-color">尝试</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -1037,30 +926,31 @@ gitment.render('gitment-content');
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/10/15/%E5%A4%A7%E4%B8%80%E5%BC%80%E5%A7%8B%E8%AE%A4%E8%AF%86%E7%9A%84%E6%97%B6%E5%80%99/">
+                <a href="/2023/02/14/%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%8E%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/">
                     <div class="card-image">
                         
-                        <img src="https://s2.loli.net/2023/02/12/CzMT4lUcE7WQePx.jpg" class="responsive-img" alt="好好生活，慢慢遇见">
                         
-                        <span class="card-title">好好生活，慢慢遇见</span>
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="单向链表的初始化与增删改查">
+                        
+                        <span class="card-title">单向链表的初始化与增删改查</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            顺序一 把猫毛乱rua一通
+                            一些基本操作
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-14
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%84%9F%E6%83%85/" class="post-category">
-                                    感情
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    数据结构
                                 </a>
                             
                             
@@ -1070,16 +960,12 @@ gitment.render('gitment-content');
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%94%9F%E6%B4%BB/">
-                        <span class="chip bg-color">生活</span>
+                    <a href="/tags/%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8/">
+                        <span class="chip bg-color">单向链表</span>
                     </a>
                     
-                    <a href="/tags/%E7%9B%B8%E8%AF%86/">
-                        <span class="chip bg-color">相识</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%BF%83%E5%8A%A8/">
-                        <span class="chip bg-color">心动</span>
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
                     </a>
                     
                 </div>
@@ -1120,7 +1006,7 @@ gitment.render('gitment-content');
 
         var url = document.location.href;
         newdiv.innerHTML += '<br />'
-            + '来源: 然然和鉴猫猫<br />'
+            + '来源: 海棠听风<br />'
             + '文章作者: 悠然寂夏<br />'
             + '文章链接: <a href="' + url + '">' + url + '</a><br />'
             + '不想粘贴在这里喵~';
@@ -1248,7 +1134,7 @@ gitment.render('gitment-content');
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2023</span>
+                <span id="year">2023-2024</span>
             
             <a href="/about" target="_blank">悠然寂夏</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -1523,7 +1409,7 @@ $(function () {
         <script type="text/javascript">
           var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
           var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
-          var cookieDomain = "http://example.com"; //Cookie地址, 一定要设定, 通常为你的网址
+          var cookieDomain = "https://github.com"; //Cookie地址, 一定要设定, 通常为你的网址
           var msgToTraditionalChinese = "繁"; //此处可以更改为你想要显示的文字
           var msgToSimplifiedChinese = "简"; //同上，但两处均不建议更改
           var translateButtonId = "translateLink"; //默认互换id
