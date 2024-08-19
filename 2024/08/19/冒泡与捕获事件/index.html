@@ -4,12 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="第一天, 海棠听风">
-    <meta name="description" content="记录我的第一天部署的博客~这是最早的一篇文章！
-记录一点指令，怕忘记啦
-今天记录一下es6的语法规范
-语法规范使用数组成员对变量赋值时，优先使用解构赋值
-12345678const arr = [1, 2, 3, 4];// badcons">
+    <meta name="keywords" content="冒泡与捕获事件, 海棠听风">
+    <meta name="description" content="冒泡点击大一点的最顶层的盒子的时候，优先处理了那个小盒子，而父盒子里面那个小盒子的话，后面才去加载，这样做在处理hover的时候容易触发区域改变有问题，详情见我的项目友情链接那个地方
+当一个事件发生在一个元素上，它会首先运行在该元素上的处理">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>第一天 | 海棠听风</title>
+    <title>冒泡与捕获事件 | 海棠听风</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <style>
@@ -347,12 +344,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">第一天</h1>
+                    <h1 class="description center-align post-title">冒泡与捕获事件</h1>
                 </div>
             </div>
         </div>
@@ -376,14 +373,23 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%B0%9D%E8%AF%95/">
-                                <span class="chip bg-color">尝试</span>
+                            <a href="/tags/JavaScript/">
+                                <span class="chip bg-color">JavaScript</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -392,7 +398,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-01-31
+                    2024-08-19
                 </div>
                 
 
@@ -413,26 +419,42 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>记录我的第一天部署的博客~这是最早的一篇文章！</p>
-<p>记录一点指令，怕忘记啦</p>
-<p>今天记录一下es6的语法规范</p>
-<h2 id="语法规范"><a href="#语法规范" class="headerlink" title="语法规范"></a>语法规范</h2><p>使用数组成员对变量赋值时，优先使用解构赋值</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">const</span> first = arr[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">const</span> second = arr[<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">const</span> [first, second] = arr;</span><br></pre></td></tr></table></figure>
+                <h3 id="冒泡"><a href="#冒泡" class="headerlink" title="冒泡"></a>冒泡</h3><p>点击大一点的最顶层的盒子的时候，优先处理了那个小盒子，而父盒子里面那个小盒子的话，后面才去加载，这样做在处理hover的时候容易触发区域改变有问题，详情见我的项目友情链接那个地方</p>
+<p><strong>当一个事件发生在一个元素上，它会首先运行在该元素上的处理程序，然后运行其父元素上的处理程序，然后一直向上到其他祖先上的处理程序。</strong></p>
+<p>假设我们有 3 层嵌套 <code>FORM &gt; DIV &gt; P</code>，它们各自拥有一个处理程序：</p>
+<p>点击内部的 <code>&lt;p&gt;</code> 会首先运行 <code>onclick</code>：</p>
+<ol>
+<li>在该 <code>&lt;p&gt;</code> 上的。</li>
+<li>然后是外部 <code>&lt;div&gt;</code> 上的。</li>
+<li>然后是外部 <code>&lt;form&gt;</code> 上的。</li>
+<li>以此类推，直到最后的 <code>document</code> 对象。</li>
+</ol>
+<p>因此，如果我们点击 <code>&lt;p&gt;</code>，那么我们将看到 3 个 alert：<code>p</code> → <code>div</code> → <code>form</code>。</p>
+<p>这个过程被称为“冒泡（bubbling）”，因为事件从内部元素“冒泡”到所有父级，就像在水里的气泡一样。</p>
+<p><code>event.target</code> 可能会等于 <code>this</code> —— 当点击事件发生在 <code>&lt;form&gt;</code> 元素上时，就会发生这种情况。</p>
+<p>具体例子，想要实现鼠标移动到父div时，显示更大的子div浮层卡片</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">import &#123; useRef &#125; from &quot;react&quot;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">const LinkDetails = (&#123; post, getConfig, index &#125;) =&gt; &#123;</span><br><span class="line">  const tooltipRef = useRef(null);</span><br><span class="line">  const handleMouseOver = (e) =&gt; &#123;</span><br><span class="line">    e.stopPropagation();</span><br><span class="line">    if (tooltipRef.current) &#123;</span><br><span class="line">      tooltipRef.current.style.opacity = &quot;1&quot;;</span><br><span class="line">      tooltipRef.current.style.visibility = &quot;visible&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">  const handleMouseOut = (e) =&gt; &#123;</span><br><span class="line">    if (tooltipRef.current) &#123;</span><br><span class="line">      tooltipRef.current.style.opacity = &quot;0&quot;;</span><br><span class="line">      tooltipRef.current.style.visibility = &quot;hidden&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">          &lt;div</span><br><span class="line">            className=&quot;flex flex-col space-y-0.5 flex-grow w-3/4 hover-trigger&quot;</span><br><span class="line">            onMouseOver=&#123;(e) =&gt; handleMouseOver(e)&#125;</span><br><span class="line">            onMouseOut=&#123;(e) =&gt; handleMouseOut(e)&#125;</span><br><span class="line">          &gt;</span><br><span class="line">            &lt;h2 className=&quot;text-sm font-semibold leading-5 truncate&quot;&gt;</span><br><span class="line">              &#123;post.title&#125;</span><br><span class="line">            &lt;/h2&gt;</span><br><span class="line">            &lt;p className=&quot;text-current text-xs truncate &quot;&gt;&#123;post.description&#125;&lt;/p&gt;</span><br><span class="line">            &lt;div</span><br><span class="line">              ref=&#123;tooltipRef&#125;</span><br><span class="line">              className=&#123;classNames(</span><br><span class="line">                &quot;w-full p-2 bg-gray-700/[.9] text-white text-sm rounded-md&quot;,</span><br><span class="line">                &quot;absolute bottom-10 xl:left-[75px] left-[10px] z-[55]&quot;,</span><br><span class="line">                &quot;opacity-0 visibility-hidden transition-opacity duration-300&quot;</span><br><span class="line">              )&#125;</span><br><span class="line">            &gt;</span><br><span class="line">              &#123;post.description&#125;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">          &lt;/div&gt;</span><br></pre></td></tr></table></figure>
 
-<p>如果是函数的话</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getFullName</span>(<span class="params">user</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> firstName = user.<span class="property">firstName</span>;</span><br><span class="line">  <span class="keyword">const</span> lastName = user.<span class="property">lastName</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getFullName</span>(<span class="params">obj</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; firstName, lastName &#125; = obj;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// best</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getFullName</span>(<span class="params">&#123; firstName, lastName &#125;</span>) &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="捕获"><a href="#捕获" class="headerlink" title="捕获"></a>捕获</h3><p>事件处理的另一个阶段被称为“捕获（capturing）”。它很少被用在实际开发中，但有时是有用的。</p>
+<p><a target="_blank" rel="noopener" href="http://www.w3.org/TR/DOM-Level-3-Events/">DOM 事件</a>标准描述了事件传播的 3 个阶段：</p>
+<ol>
+<li>捕获阶段（Capturing phase）—— 事件（从 Window）向下走近元素。</li>
+<li>目标阶段（Target phase）—— 事件到达目标元素。</li>
+<li>冒泡阶段（Bubbling phase）—— 事件从元素上开始冒泡。</li>
+</ol>
+<img src="https://s2.loli.net/2024/08/19/sENeBL7cPfJhnMG.png" alt="捕获图示" style="zoom: 80%;" />
 
-<p>如果函数返回多个值，优先使用对象的解构赋值，而不是数组的解构赋值。这样便于以后添加返回值，以及更改返回值的顺序。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">processInput</span>(<span class="params">input</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> [left, right, top, bottom];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">processInput</span>(<span class="params">input</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123; left, right, top, bottom &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123; left, right &#125; = <span class="title function_">processInput</span>(input);</span><br></pre></td></tr></table></figure>
+<p>也就是说：点击 <code>&lt;td&gt;</code>，事件首先通过祖先链向下到达元素（捕获阶段），然后到达目标（目标阶段），最后上升（冒泡阶段），在途中调用处理程序。</p>
+<p>总结</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-tag">body</span> * &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">margin</span>: <span class="number">10px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">border</span>: <span class="number">1px</span> solid blue;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span>FORM</span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>DIV</span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>P<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">for</span>(<span class="keyword">let</span> elem <span class="keyword">of</span> <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;*&#x27;</span>)) &#123;</span></span><br><span class="line"><span class="language-javascript">    elem.<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="function"><span class="params">e</span> =&gt;</span> <span class="title function_">alert</span>(<span class="string">`Capturing: <span class="subst">$&#123;elem.tagName&#125;</span>`</span>), <span class="literal">true</span>);</span></span><br><span class="line"><span class="language-javascript">    elem.<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="function"><span class="params">e</span> =&gt;</span> <span class="title function_">alert</span>(<span class="string">`Bubbling: <span class="subst">$&#123;elem.tagName&#125;</span>`</span>));</span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>数组</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">const</span> len = items.<span class="property">length</span>;</span><br><span class="line"><span class="keyword">const</span> itemsCopy = [];</span><br><span class="line"><span class="keyword">let</span> i;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">  itemsCopy[i] = items[i];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">const</span> itemsCopy = [...items];</span><br></pre></td></tr></table></figure>
-
-<p>那些使用匿名函数当作参数的场合，尽量用箭头函数代替。因为这样更简洁，而且绑定了 this。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].<span class="title function_">map</span>(<span class="keyword">function</span> (<span class="params">x</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> x * x;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].<span class="title function_">map</span>(<span class="function">(<span class="params">x</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> x * x;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// best</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].<span class="title function_">map</span>(<span class="function"><span class="params">x</span> =&gt;</span> x * x);</span><br></pre></td></tr></table></figure>
-
-<p>模块</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// CommonJS 的写法</span></span><br><span class="line"><span class="keyword">const</span> moduleA = <span class="built_in">require</span>(<span class="string">&#x27;moduleA&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> func1 = moduleA.<span class="property">func1</span>;</span><br><span class="line"><span class="keyword">const</span> func2 = moduleA.<span class="property">func2</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6 的写法</span></span><br><span class="line"><span class="keyword">import</span> &#123; func1, func2 &#125; <span class="keyword">from</span> <span class="string">&#x27;moduleA&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果是导出，函数名小写</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">makeStyleGuide</span>(<span class="params"></span>) &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> makeStyleGuide;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果是模块对象，大写 还有default是针对单个输出值的</span></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">StyleGuide</span> = &#123;</span><br><span class="line">  <span class="attr">es6</span>: &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">StyleGuide</span>;</span><br></pre></td></tr></table></figure>
+<p>上面这段代码为文档中的 <strong>每个</strong> 元素都设置了点击处理程序，以查看哪些元素上的点击事件处理程序生效了。</p>
+<p>如果你点击了 <code>&lt;p&gt;</code>，那么顺序是：</p>
+<ol>
+<li><code>HTML</code> → <code>BODY</code> → <code>FORM</code> → <code>DIV</code>（捕获阶段第一个监听器）：</li>
+<li><code>P</code>（目标阶段，触发两次，因为我们设置了两个监听器：捕获和冒泡）</li>
+<li><code>DIV</code> → <code>FORM</code> → <code>BODY</code> → <code>HTML</code>（冒泡阶段，第二个监听器）。</li>
+</ol>
 
                 
             </div>
@@ -459,7 +481,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://charlotte21110.github.io/2023/01/31/hello-world/">https://charlotte21110.github.io/2023/01/31/hello-world/</a>
+                    <a href="https://charlotte21110.github.io/2024/08/19/%E5%86%92%E6%B3%A1%E4%B8%8E%E6%8D%95%E8%8E%B7%E4%BA%8B%E4%BB%B6/">https://charlotte21110.github.io/2024/08/19/%E5%86%92%E6%B3%A1%E4%B8%8E%E6%8D%95%E8%8E%B7%E4%BA%8B%E4%BB%B6/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -497,8 +519,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%B0%9D%E8%AF%95/">
-                                    <span class="chip bg-color">尝试</span>
+                                <a href="/tags/JavaScript/">
+                                    <span class="chip bg-color">JavaScript</span>
                                 </a>
                             
                         </div>
@@ -576,7 +598,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2023-01-31T15-48-33',
+        id: '2024-08-19T14-52-49',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -600,7 +622,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Tue Jan 31 2023 15:48:33 GMT+0800',
+    id: 'Mon Aug 19 2024 14:52:49 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -625,9 +647,9 @@ gitment.render('gitment-content');
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://charlotte21110.github.io/2023/01/31/hello-world/';
-        this.page.identifier = '/2023/01/31/hello-world/';
-        this.page.title = '第一天';
+        this.page.url = 'https://charlotte21110.github.io/2024/08/19/%E5%86%92%E6%B3%A1%E4%B8%8E%E6%8D%95%E8%8E%B7%E4%BA%8B%E4%BB%B6/';
+        this.page.identifier = '/2024/08/19/%E5%86%92%E6%B3%A1%E4%B8%8E%E6%8D%95%E8%8E%B7%E4%BA%8B%E4%BB%B6/';
+        this.page.title = '冒泡与捕获事件';
     };
     let disqus_shortname = '';
 
@@ -890,62 +912,18 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/02/01/photo-test/">
+                <a href="/2024/08/19/%E5%86%92%E6%B3%A1%E4%B8%8E%E6%8D%95%E8%8E%B7%E4%BA%8B%E4%BB%B6/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="photo test">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="冒泡与捕获事件">
                         
-                        <span class="card-title">photo test</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            添加图片的方式
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-01
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            悠然寂夏
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%B5%8B%E8%AF%95/">
-                        <span class="chip bg-color">测试</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/01/31/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="第一天">
-                        
-                        <span class="card-title">第一天</span>
+                        <span class="card-title">冒泡与捕获事件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -956,12 +934,16 @@ gitment.render('gitment-content');
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-31
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-19
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            悠然寂夏
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -970,10 +952,47 @@ gitment.render('gitment-content');
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%B0%9D%E8%AF%95/">
-                        <span class="chip bg-color">尝试</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/08/17/see-you-again/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="flex布局">
+                        
+                        <span class="card-title">flex布局</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            悠然寂夏
+                            
+                        </span>
+                    </div>
                 </div>
                 
             </div>
