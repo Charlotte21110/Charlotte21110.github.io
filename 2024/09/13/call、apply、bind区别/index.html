@@ -4,9 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="对称加密与非对称加密, 海棠听风">
-    <meta name="description" content="对称加密对称加密又叫做私钥加密，即信息的发送方和接收方使用同一个密钥去加密和解密数据。由于其速度快，对称性加密通常在消息发送方需要加密大量数据时使用。对称性加密也称为密钥加密。常见的对称加密算法有DES、3DES、AES等。
-对称加密的过程">
+    <meta name="keywords" content="call、apply、bind区别, 海棠听风">
+    <meta name="description" content="经常看到有使用 call 和 apply,ibnd 这3个方法，每次看到后都会去网上搜一下用法，然而过一段时间就又不会了，归根到底是自己没有理解他的原理，这次准备彻底弄懂，并把自己的理解总结下来。
+作用主要有两点：
+
+1、允许为不同的对象分">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>对称加密与非对称加密 | 海棠听风</title>
+    <title>call、apply、bind区别 | 海棠听风</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <style>
@@ -344,12 +346,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">对称加密与非对称加密</h1>
+                    <h1 class="description center-align post-title">call、apply、bind区别</h1>
                 </div>
             </div>
         </div>
@@ -373,18 +375,23 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E9%80%9F%E8%AE%B0/">
-                                <span class="chip bg-color">速记</span>
-                            </a>
-                        
-                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
-                                <span class="chip bg-color">计算机网络</span>
+                            <a href="/tags/JavaScript/">
+                                <span class="chip bg-color">JavaScript</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -393,7 +400,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-08-25
+                    2024-09-13
                 </div>
                 
 
@@ -414,28 +421,90 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h1><p>对称加密又叫做<strong>私钥加密</strong>，即信息的发送方和接收方使用同一个密钥去加密和解密数据。由于其速度快，对称性加密通常在消息发送方需要加密大量数据时使用。对称性加密也称为<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%AF%86%E9%92%A5%E5%8A%A0%E5%AF%86">密钥加密</a>。常见的对称加密算法有DES、3DES、AES等。</p>
-<p>对称加密的过程如下：</p>
+                <p>经常看到有使用 <code>call</code> 和 <code>apply</code>,<code>ibnd</code> 这3个方法，每次看到后都会去网上搜一下用法，然而过一段时间就又不会了，归根到底是自己没有理解他的原理，这次准备彻底弄懂，并把自己的理解总结下来。</p>
+<p>作用主要有两点：</p>
+<ul>
+<li>1、允许为不同的对象分配和调用属于另一个对象的函数&#x2F;方法，也就是改变（或者说是扩大）函数运行的作用域，优点：对象不需要跟方法有任何耦合关系；</li>
+<li>2、提供新的 <code>this</code> 值给当前调用的函数&#x2F;方法。</li>
+</ul>
+<h1 id="call"><a href="#call" class="headerlink" title="call"></a>call</h1><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>thisArg</td>
+<td>在fun函数运行时指定的this值。</td>
+</tr>
+<tr>
+<td>arg1,arg2</td>
+<td>指定的参数列表，必须一个一个的列出来</td>
+</tr>
+</tbody></table>
+<p>实现步骤：</p>
 <ol>
-<li>明文 + 加密算法 + 私钥 &#x3D;&gt; 密文</li>
-<li>密文 + 解密算法 + 私钥 &#x3D;&gt; 明文</li>
+<li>判断调用对象是否是函数，定义在函数原型，出现用call等方式调用</li>
+<li>判断传入上下文对象是否存在，如果不存在，则设置window</li>
+<li>处理传参</li>
+<li>函数作为上下文对象的一个属性</li>
+<li>用上下文对象来调用方法，保存结果</li>
+<li>删除新增属性</li>
+<li>返回结果</li>
 </ol>
-<h1 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h1><p>非对称加密也叫做<strong>公钥加密</strong>，它使用一对密钥，即公钥和私钥，且二者成对出现。常见的非对称加密算法有RSA、DSA等。</p>
-<p>非对称加密的过程如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// call函数实现</span></span><br><span class="line"><span class="title class_">Function</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">myCall</span> = <span class="keyword">function</span>(<span class="params">context</span>) &#123;</span><br><span class="line">  <span class="comment">// 判断调用对象</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="variable language_">this</span> !== <span class="string">&quot;function&quot;</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&quot;type error&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 获取参数</span></span><br><span class="line">  <span class="keyword">let</span> args = [...<span class="variable language_">arguments</span>].<span class="title function_">slice</span>(<span class="number">1</span>),</span><br><span class="line">      result = <span class="literal">null</span>;</span><br><span class="line">  <span class="comment">// 判断 context 是否传入，如果未传入则设置为 window</span></span><br><span class="line">  context = context || <span class="variable language_">window</span>;</span><br><span class="line">  <span class="comment">// 将调用函数设为对象的方法</span></span><br><span class="line">  context.<span class="property">fn</span> = <span class="variable language_">this</span>;</span><br><span class="line">  <span class="comment">// 调用函数</span></span><br><span class="line">  result = context.<span class="title function_">fn</span>(...args);</span><br><span class="line">  <span class="comment">// 将属性删除</span></span><br><span class="line">  <span class="keyword">delete</span> context.<span class="property">fn</span>;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h1><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>thisArg</td>
+<td>在fun函数运行时指定的this值。</td>
+</tr>
+<tr>
+<td>arguments</td>
+<td>指定的参数数组</td>
+</tr>
+</tbody></table>
 <ol>
-<li>被公钥或私钥加密的密文只能被对应的另一个密钥解密。</li>
-<li>公钥可以加密，但只有私钥可以解密；私钥可以加密，但只有公钥可以解密。</li>
+<li>判断调用对象是否为函数，即使我们是定义在函数的原型上的，但是可能出现使用 call 等方式调用的情况。</li>
+<li>判断传入上下文对象是否存在，如果不存在，则设置为 window 。</li>
+<li>将函数作为上下文对象的一个属性。</li>
+<li>判断参数值是否传入</li>
+<li>使用上下文对象来调用这个方法，并保存返回结果。</li>
+<li>删除刚才新增的属性</li>
+<li>返回结果</li>
 </ol>
-<h1 id="数字签名"><a href="#数字签名" class="headerlink" title="数字签名"></a>数字签名</h1><h1 id="Https的加密原理"><a href="#Https的加密原理" class="headerlink" title="Https的加密原理"></a>Https的加密原理</h1><p>它结合了对称加密和非对称加密的方式，实现数据传输的安全性。在HTTPS中，服务器和客户端首先使用非对称加密的方式交换密钥，然后使用对称加密的方式对数据进行加密和解密。</p>
-<ol>
-<li>非对称加密用于<strong>密钥交换</strong>：服务器和客户端首先通过 非对称加密的方式交换密钥。客户端生成一对公钥和私钥，并将公钥发送给服务器。服务器使用客户端的公钥对一个随机生成的密钥进行加密，并将密文发送给客户端。客户端使用自己的私钥解密得到这个随机生成的密钥，这个密钥就是之后用来对数据进行对称加密的密钥。</li>
-<li>对称加密用于<strong>数据传输</strong>：使用前面交换得到的密钥，客户端和服务器对数据进行对称加密和解密。由于对称加密算法的加解密速度较快，因此适合用于对大量数据进行加密。</li>
-<li><strong>非对称加密用于身份验证</strong>：在HTTPS中，服务器还会通过非对称加密的方式向客户端证明自己的身份。服务器会用自己的私钥对一些信息进行签名，然后将<strong>签名和公钥</strong>一起发送给客户端。客户端使用服务器的公钥验证签名，从而确认服务器的身份。这样可以防止中间人攻击，确保数据传输的安全性。</li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// apply 函数实现</span></span><br><span class="line"><span class="title class_">Function</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">myApply</span> = <span class="keyword">function</span>(<span class="params">context</span>) &#123;</span><br><span class="line">  <span class="comment">// 判断调用对象是否为函数</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="variable language_">this</span> !== <span class="string">&quot;function&quot;</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">TypeError</span>(<span class="string">&quot;Error&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> result = <span class="literal">null</span>;</span><br><span class="line">  <span class="comment">// 判断 context 是否存在，如果未传入则为 window</span></span><br><span class="line">  context = context || <span class="variable language_">window</span>;</span><br><span class="line">  <span class="comment">// 将函数设为对象的方法</span></span><br><span class="line">  context.<span class="property">fn</span> = <span class="variable language_">this</span>;</span><br><span class="line">  <span class="comment">// 调用方法</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="variable language_">arguments</span>[<span class="number">1</span>]) &#123;</span><br><span class="line">    result = context.<span class="title function_">fn</span>(...<span class="variable language_">arguments</span>[<span class="number">1</span>]);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    result = context.<span class="title function_">fn</span>();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 将属性删除</span></span><br><span class="line">  <span class="keyword">delete</span> context.<span class="property">fn</span>;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="bind"><a href="#bind" class="headerlink" title="bind"></a>bind</h1><ol>
+<li>判断调用对象是否为函数，即使我们是定义在函数的原型上的，但是可能出现使用 call 等方式调用的情况。</li>
+<li>保存当前函数的引用，获取其余传入参数值。</li>
+<li>创建一个函数返回</li>
+<li>函数内部使用 apply 来绑定函数调用，需要判断函数作为构造函数的情况，这个时候需要传入当前函数的 this 给 apply 调用，其余情况都传入指定的上下文对象。</li>
 </ol>
-<p>总结来说，HTTPS通过结合对称加密和非对称加密的方式，实现了数据传输的安全性和完整性。对称加密用于数据加解密，而非对称加密则用于密钥交换和身份验证。这种结合方式使得HTTPS能够提供高强度的安全保障，保护我们的网络通信不受攻击和干扰。</p>
-<h1 id="关于https"><a href="#关于https" class="headerlink" title="关于https"></a>关于https</h1><p>是一种超文本传输协议，是一种通过<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%A8%88%E7%AE%97%E6%A9%9F%E7%B6%B2%E7%B5%A1">计算机网络</a>进行安全通信的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%B6%B2%E8%B7%AF%E5%82%B3%E8%BC%B8%E5%8D%94%E5%AE%9A">传输协议</a>。HTTPS经由<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/HTTP">HTTP</a>进行通信，但利用<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BC%A0%E8%BE%93%E5%B1%82%E5%AE%89%E5%85%A8">SSL&#x2F;TLS</a>来加密数据包。HTTPS开发的主要目的，是提供对<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%B6%B2%E7%AB%99">网站</a>服务器的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81">身份认证</a>，保护交换数据的隐私与<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%AE%8C%E6%95%B4%E6%80%A7">完整性</a>。这个协议由<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%B6%B2%E6%99%AF">网景</a>公司（Netscape）在1994年首次提出，随后扩展到<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%B6%B2%E9%9A%9B%E7%B6%B2%E8%B7%AF">互联网</a>上。HTTPS是并非应用层的新协议。只是HTTP通信接口用<strong>SSL或TLS协议代替而已。</strong></p>
-<p><a target="_blank" rel="noopener" href="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/7/1/164561a49c937e68~tplv-t2oaga2asx-image.image">imageHttps</a></p>
-<p>在采用ssl后，http就拥有了加密、证书、完整性保护这些功能。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bind 函数实现</span></span><br><span class="line"><span class="title class_">Function</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">myBind</span> = <span class="keyword">function</span>(<span class="params">context</span>) &#123;</span><br><span class="line">  <span class="comment">// 判断调用对象是否为函数</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="variable language_">this</span> !== <span class="string">&quot;function&quot;</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">TypeError</span>(<span class="string">&quot;Error&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 获取参数</span></span><br><span class="line">  <span class="keyword">var</span> args = [...<span class="variable language_">arguments</span>].<span class="title function_">slice</span>(<span class="number">1</span>),</span><br><span class="line">      fn = <span class="variable language_">this</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span> <span class="title function_">Fn</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// 根据调用方式，传入不同绑定值</span></span><br><span class="line">    <span class="keyword">return</span> fn.<span class="title function_">apply</span>(</span><br><span class="line">      <span class="variable language_">this</span> <span class="keyword">instanceof</span> <span class="title class_">Fn</span> ? <span class="variable language_">this</span> : context,</span><br><span class="line">      args.<span class="title function_">concat</span>(...<span class="variable language_">arguments</span>)</span><br><span class="line">    );</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="call-和-apply-的常见用法"><a href="#call-和-apply-的常见用法" class="headerlink" title="call()和 apply 的常见用法"></a><code>call()</code>和 <code>apply</code> 的常见用法</h2><p><code>apply</code> 常常被用于数组操作。</p>
+<blockquote>
+<p>1、如合并两个数组，且改变原数组。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array = [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>];     </span><br><span class="line"><span class="keyword">var</span> elements = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>];   </span><br><span class="line">array.<span class="property">push</span>.<span class="title function_">apply</span>(array, elements);  </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(array); <span class="comment">// [&quot;a&quot;, &quot;b&quot;, 0, 1, 2]  </span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如求取数组中的最大最小值。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numbers = [<span class="number">5</span>, <span class="number">6</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">7</span>];  </span><br><span class="line"><span class="keyword">var</span> max = <span class="title class_">Math</span>.<span class="property">max</span>.<span class="title function_">apply</span>(<span class="literal">null</span>, numbers);    </span><br><span class="line"><span class="comment">/* 基本等同于 Math.max(5, 6, 2, 3, 7)  */</span>   </span><br><span class="line"><span class="keyword">var</span> min = <span class="title class_">Math</span>.<span class="property">min</span>.<span class="title function_">apply</span>(<span class="literal">null</span>, numbers);  </span><br><span class="line"><span class="comment">/* 基本等同于 Math.min(5, 6, 2, 3, 7)  */</span> </span><br><span class="line">     </span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>实现继承</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name, age</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">showName</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">showAge</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">age</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Teacher</span>(<span class="params">name, age</span>) &#123;</span><br><span class="line">    <span class="title class_">Person</span>.<span class="title function_">apply</span>(<span class="variable language_">this</span>, [age,name]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> p1=<span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;李四&quot;</span>,<span class="number">25</span>);</span><br><span class="line"><span class="keyword">var</span> t1 = <span class="keyword">new</span> <span class="title class_">Teacher</span>(<span class="string">&quot;张三&quot;</span>, <span class="number">30</span>);</span><br><span class="line">t1.<span class="title function_">showName</span>();<span class="comment">//&quot;张三&quot;</span></span><br><span class="line">t1.<span class="title function_">showAge</span>();<span class="comment">//30</span></span><br></pre></td></tr></table></figure>
 
                 
             </div>
@@ -462,7 +531,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://charlotte21110.github.io/2024/08/25/%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E4%B8%8E%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86/">https://charlotte21110.github.io/2024/08/25/%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E4%B8%8E%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86/</a>
+                    <a href="https://charlotte21110.github.io/2024/09/13/call%E3%80%81apply%E3%80%81bind%E5%8C%BA%E5%88%AB/">https://charlotte21110.github.io/2024/09/13/call%E3%80%81apply%E3%80%81bind%E5%8C%BA%E5%88%AB/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -500,12 +569,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E9%80%9F%E8%AE%B0/">
-                                    <span class="chip bg-color">速记</span>
-                                </a>
-                            
-                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
-                                    <span class="chip bg-color">计算机网络</span>
+                                <a href="/tags/JavaScript/">
+                                    <span class="chip bg-color">JavaScript</span>
                                 </a>
                             
                         </div>
@@ -583,7 +648,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2024-08-25T10-41-33',
+        id: '2024-09-13T00-01-33',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -607,7 +672,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Sun Aug 25 2024 10:41:33 GMT+0800',
+    id: 'Fri Sep 13 2024 00:01:33 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -632,9 +697,9 @@ gitment.render('gitment-content');
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://charlotte21110.github.io/2024/08/25/%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E4%B8%8E%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86/';
-        this.page.identifier = '/2024/08/25/%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E4%B8%8E%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86/';
-        this.page.title = '对称加密与非对称加密';
+        this.page.url = 'https://charlotte21110.github.io/2024/09/13/call%E3%80%81apply%E3%80%81bind%E5%8C%BA%E5%88%AB/';
+        this.page.identifier = '/2024/09/13/call%E3%80%81apply%E3%80%81bind%E5%8C%BA%E5%88%AB/';
+        this.page.title = 'call、apply、bind区别';
     };
     let disqus_shortname = '';
 
@@ -897,9 +962,10 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2024/09/13/call%E3%80%81apply%E3%80%81bind%E5%8C%BA%E5%88%AB/">
                     <div class="card-image">
@@ -917,9 +983,9 @@ gitment.render('gitment-content');
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-09-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-09-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -932,6 +998,7 @@ gitment.render('gitment-content');
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -950,13 +1017,13 @@ gitment.render('gitment-content');
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/08/24/px-em-rem%E7%9A%84%E5%8C%BA%E5%88%AB/">
+                <a href="/2024/08/25/%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E4%B8%8E%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="px em rem的区别">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="对称加密与非对称加密">
                         
-                        <span class="card-title">px em rem的区别</span>
+                        <span class="card-title">对称加密与非对称加密</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -967,7 +1034,7 @@ gitment.render('gitment-content');
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-25
                             </span>
                         <span class="publish-author">
                             
@@ -980,8 +1047,12 @@ gitment.render('gitment-content');
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                        <span class="chip bg-color">前端</span>
+                    <a href="/tags/%E9%80%9F%E8%AE%B0/">
+                        <span class="chip bg-color">速记</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">计算机网络</span>
                     </a>
                     
                 </div>
