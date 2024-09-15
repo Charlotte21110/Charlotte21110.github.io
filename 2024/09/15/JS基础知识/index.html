@@ -4,12 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="第一天, 海棠听风">
-    <meta name="description" content="记录我的第一天部署的博客~这是最早的一篇文章！
-记录一点指令，怕忘记啦
-今天记录一下es6的语法规范
-语法规范使用数组成员对变量赋值时，优先使用解构赋值
-12345678const arr = [1, 2, 3, 4];// badcons">
+    <meta name="keywords" content="JS基础知识, 海棠听风">
+    <meta name="description" content="Axios 的拦截器原理及应用原理Axios 拦截器允许开发者在请求发送或响应被处理之前对其进行拦截和修改。Axios 拦截器分为请求拦截器和响应拦截器：
+
+请求拦截器：在发送请求到服务器之前，对请求数据进行处理或添加额外的信息，如设置通用">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>第一天 | 海棠听风</title>
+    <title>JS基础知识 | 海棠听风</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <style>
@@ -347,7 +345,7 @@
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '';
+        let pwd = 'b493d48364afe44d11c0165cf470a4164d1e2609911ef998be868d46ade3de4e';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
@@ -360,12 +358,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">第一天</h1>
+                    <h1 class="description center-align post-title">JS基础知识</h1>
                 </div>
             </div>
         </div>
@@ -389,14 +387,23 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%B0%9D%E8%AF%95/">
-                                <span class="chip bg-color">尝试</span>
+                            <a href="/tags/JavaScript/">
+                                <span class="chip bg-color">JavaScript</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -405,7 +412,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-01-31
+                    2024-09-15
                 </div>
                 
 
@@ -426,26 +433,27 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>记录我的第一天部署的博客~这是最早的一篇文章！</p>
-<p>记录一点指令，怕忘记啦</p>
-<p>今天记录一下es6的语法规范</p>
-<h2 id="语法规范"><a href="#语法规范" class="headerlink" title="语法规范"></a>语法规范</h2><p>使用数组成员对变量赋值时，优先使用解构赋值</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">const</span> first = arr[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">const</span> second = arr[<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">const</span> [first, second] = arr;</span><br></pre></td></tr></table></figure>
+                <h1 id="Axios-的拦截器原理及应用"><a href="#Axios-的拦截器原理及应用" class="headerlink" title="Axios 的拦截器原理及应用"></a>Axios 的拦截器原理及应用</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>Axios 拦截器允许开发者在请求发送或响应被处理之前对其进行拦截和修改。Axios 拦截器分为请求拦截器和响应拦截器：</p>
+<ul>
+<li><strong>请求拦截器</strong>：在发送请求到服务器之前，对请求数据进行处理或添加额外的信息，如设置通用的头信息、添加token等。</li>
+<li><strong>响应拦截器</strong>：在服务器响应数据返回到then或catch之前，对数据进行预处理，如统一处理错误信息、格式化响应数据等。</li>
+</ul>
+<h2 id="创建一个axios"><a href="#创建一个axios" class="headerlink" title="创建一个axios"></a>创建一个axios</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//接口的地址：https://api.apiopen.top/getJoke</span></span><br><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">//1.创建对象</span></span><br><span class="line">    <span class="keyword">const</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span><br><span class="line">    <span class="comment">//2.初始化</span></span><br><span class="line">    xhr.<span class="title function_">open</span>(<span class="string">&quot;GET&quot;</span>, <span class="string">&quot;https://api.apiopen.top/get&quot;</span>);</span><br><span class="line">    <span class="comment">//3.发送</span></span><br><span class="line">    xhr.<span class="title function_">send</span>();</span><br><span class="line">    <span class="comment">//4.绑定事件，处理响应结果</span></span><br><span class="line">    xhr.<span class="property">onreadystatechange</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        <span class="comment">//判断响应状态码 200-299</span></span><br><span class="line">        <span class="keyword">if</span> (xhr.<span class="property">readyState</span> === <span class="number">4</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (xhr.<span class="property">status</span> &gt;= <span class="number">200</span> &amp;&amp; xhr.<span class="property">status</span> &lt; <span class="number">300</span>) &#123;</span><br><span class="line">                <span class="title function_">resolve</span>(xhr.<span class="property">response</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">//如果失败</span></span><br><span class="line">                <span class="title function_">reject</span>(xhr.<span class="property">status</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//指定回调</span></span><br><span class="line">p.<span class="title function_">then</span>(<span class="keyword">function</span>(<span class="params">value</span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(value); <span class="comment">//成功时</span></span><br><span class="line">&#125;,<span class="keyword">function</span>(<span class="params">reason</span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(reason); <span class="comment">//失败时</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<p>如果是函数的话</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getFullName</span>(<span class="params">user</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> firstName = user.<span class="property">firstName</span>;</span><br><span class="line">  <span class="keyword">const</span> lastName = user.<span class="property">lastName</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getFullName</span>(<span class="params">obj</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; firstName, lastName &#125; = obj;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// best</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getFullName</span>(<span class="params">&#123; firstName, lastName &#125;</span>) &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Fetch请求方式"><a href="#Fetch请求方式" class="headerlink" title="Fetch请求方式"></a>Fetch请求方式</h1><p>Fetch API 提供了一个更现代、更强大、更灵活的方式来发起网络请求。它是一个内置在现代浏览器中的API，用于替代传统的 <code>XMLHttpRequest</code>。</p>
+<p>特点：</p>
+<ul>
+<li>返回一个 Promise，使得异步处理更加方便。</li>
+<li>默认不发送或接收cookies，如果站点依赖于用户会话，则需要手动设置credentials。</li>
+</ul>
+<p>特点：</p>
+<ul>
+<li>返回一个 Promise，使得异步处理更加方便。</li>
+<li>默认不发送或接收cookies，如果站点依赖于用户会话，则需要手动设置credentials。</li>
+<li>更易于处理基于流的数据处理。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">fetch</span>(<span class="string">&#x27;url&#x27;</span>)</span><br><span class="line">    .<span class="title function_">then</span>(<span class="function"><span class="params">response</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (!response.<span class="property">ok</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;Network response was not ok&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> response.<span class="title function_">json</span>();</span><br><span class="line">    &#125;)</span><br><span class="line">    .<span class="title function_">then</span>(<span class="function"><span class="params">data</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(data))</span><br><span class="line">    .<span class="title function_">catch</span>(<span class="function"><span class="params">error</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;Error:&#x27;</span>, error));</span><br></pre></td></tr></table></figure>
 
-<p>如果函数返回多个值，优先使用对象的解构赋值，而不是数组的解构赋值。这样便于以后添加返回值，以及更改返回值的顺序。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">processInput</span>(<span class="params">input</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> [left, right, top, bottom];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">processInput</span>(<span class="params">input</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123; left, right, top, bottom &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123; left, right &#125; = <span class="title function_">processInput</span>(input);</span><br></pre></td></tr></table></figure>
-
-<p>数组</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">const</span> len = items.<span class="property">length</span>;</span><br><span class="line"><span class="keyword">const</span> itemsCopy = [];</span><br><span class="line"><span class="keyword">let</span> i;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">  itemsCopy[i] = items[i];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">const</span> itemsCopy = [...items];</span><br></pre></td></tr></table></figure>
-
-<p>那些使用匿名函数当作参数的场合，尽量用箭头函数代替。因为这样更简洁，而且绑定了 this。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].<span class="title function_">map</span>(<span class="keyword">function</span> (<span class="params">x</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> x * x;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].<span class="title function_">map</span>(<span class="function">(<span class="params">x</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> x * x;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// best</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].<span class="title function_">map</span>(<span class="function"><span class="params">x</span> =&gt;</span> x * x);</span><br></pre></td></tr></table></figure>
-
-<p>模块</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// CommonJS 的写法</span></span><br><span class="line"><span class="keyword">const</span> moduleA = <span class="built_in">require</span>(<span class="string">&#x27;moduleA&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> func1 = moduleA.<span class="property">func1</span>;</span><br><span class="line"><span class="keyword">const</span> func2 = moduleA.<span class="property">func2</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6 的写法</span></span><br><span class="line"><span class="keyword">import</span> &#123; func1, func2 &#125; <span class="keyword">from</span> <span class="string">&#x27;moduleA&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果是导出，函数名小写</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">makeStyleGuide</span>(<span class="params"></span>) &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> makeStyleGuide;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果是模块对象，大写 还有default是针对单个输出值的</span></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">StyleGuide</span> = &#123;</span><br><span class="line">  <span class="attr">es6</span>: &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">StyleGuide</span>;</span><br></pre></td></tr></table></figure>
 
                 
             </div>
@@ -472,7 +480,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://charlotte21110.github.io/2023/01/31/hello-world/">https://charlotte21110.github.io/2023/01/31/hello-world/</a>
+                    <a href="https://charlotte21110.github.io/2024/09/15/JS%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">https://charlotte21110.github.io/2024/09/15/JS%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -510,8 +518,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%B0%9D%E8%AF%95/">
-                                    <span class="chip bg-color">尝试</span>
+                                <a href="/tags/JavaScript/">
+                                    <span class="chip bg-color">JavaScript</span>
                                 </a>
                             
                         </div>
@@ -589,7 +597,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2023-01-31T15-48-33',
+        id: '2024-09-15T10-53-26',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -613,7 +621,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Tue Jan 31 2023 15:48:33 GMT+0800',
+    id: 'Sun Sep 15 2024 10:53:26 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -638,9 +646,9 @@ gitment.render('gitment-content');
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://charlotte21110.github.io/2023/01/31/hello-world/';
-        this.page.identifier = '/2023/01/31/hello-world/';
-        this.page.title = '第一天';
+        this.page.url = 'https://charlotte21110.github.io/2024/09/15/JS%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/';
+        this.page.identifier = '/2024/09/15/JS%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/';
+        this.page.title = 'JS基础知识';
     };
     let disqus_shortname = '';
 
@@ -903,62 +911,18 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/02/01/photo-test/">
+                <a href="/2024/09/15/JS%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="photo test">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="JS基础知识">
                         
-                        <span class="card-title">photo test</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            添加图片的方式
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-01
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            悠然寂夏
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%B5%8B%E8%AF%95/">
-                        <span class="chip bg-color">测试</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/01/31/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="第一天">
-                        
-                        <span class="card-title">第一天</span>
+                        <span class="card-title">JS基础知识</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -969,12 +933,16 @@ gitment.render('gitment-content');
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-31
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-09-15
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            悠然寂夏
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -983,8 +951,57 @@ gitment.render('gitment-content');
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%B0%9D%E8%AF%95/">
-                        <span class="chip bg-color">尝试</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/09/13/call%E3%80%81apply%E3%80%81bind%E5%8C%BA%E5%88%AB/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="call、apply、bind区别">
+                        
+                        <span class="card-title">call、apply、bind区别</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-09-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>
