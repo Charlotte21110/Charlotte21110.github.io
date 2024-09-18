@@ -5,7 +5,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="计算机网络必备, 海棠听风">
-    <meta name="description" content="">
+    <meta name="description" content="说一下浏览器如何渲染页面的
+解析HTML文档：构建DOM树
+解析CSS样式表：构建CSSOM树
+构建渲染树：浏览器将DOM树与CSSOM树合并，生成渲染树。渲染树包含了页面所有要显示的元素
+布局：确定大小，流式布局
+绘制：按照渲染树的布局信">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -431,7 +436,27 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="说一下浏览器如何渲染页面的"><a href="#说一下浏览器如何渲染页面的" class="headerlink" title="说一下浏览器如何渲染页面的"></a>说一下浏览器如何渲染页面的</h1><ol>
+<li>解析HTML文档：构建DOM树</li>
+<li>解析CSS样式表：构建CSSOM树</li>
+<li>构建渲染树：浏览器将DOM树与CSSOM树合并，生成渲染树。渲染树包含了页面所有要显示的元素</li>
+<li>布局：确定大小，流式布局</li>
+<li>绘制：按照渲染树的布局信息，绘制元素，重新排列</li>
+<li>合成：3D变换，叠层的合并</li>
+<li>页面显示</li>
+</ol>
+<p>其中如果用户点击交互，渲染火铳是动态的</p>
+<h1 id="说一下重绘、重排区别如何避免"><a href="#说一下重绘、重排区别如何避免" class="headerlink" title="说一下重绘、重排区别如何避免"></a>说一下重绘、重排区别如何避免</h1><p>当外观发生变化，即颜色，不会影响<strong>布局</strong>，就是重绘</p>
+<p>当元素的<strong>位置、尺寸或字体发生变化，会影响布局</strong>，浏览器要重新布局绘制，就是重排</p>
+<h1 id="说一下浏览器垃圾回收机制"><a href="#说一下浏览器垃圾回收机制" class="headerlink" title="说一下浏览器垃圾回收机制?"></a>说一下浏览器垃圾回收机制?</h1><p>主要负责回收不再使用的内存空间，避免内存泄漏</p>
+<ol>
+<li>标记：从跟对象开始，标记所有从跟对象可达的对象，这些对象被认为是活动的，因为它们正在被使用</li>
+<li>清除：一旦标记完成，垃圾回收器会清除未被标记的，不用的</li>
+<li>整理：解决内存碎片化的问题，垃圾回收机可能移动活动对象，将它们紧凑排列在内存的一侧。</li>
+<li>晋升：如果对象在新生代中经过多次垃圾回收仍然存活，它们会被移动到老生代中。</li>
+</ol>
+<p><strong>引用计数</strong>是另一种垃圾回收机制，每个对象都有一个引用计数器，当对象不再被引用时，计数器归零，对象就会被回收。但这种方法无法处理循环引用的问题。</p>
+
                 
             </div>
             <hr/>
@@ -457,7 +482,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://charlotte21110.github.io/2024/09/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E8%B7%AF%E5%BF%85%E5%A4%87/">https://charlotte21110.github.io/2024/09/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E8%B7%AF%E5%BF%85%E5%A4%87/</a>
+                    <a href="https://charlotte21110.github.io/2024/09/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%BF%85%E5%A4%87/">https://charlotte21110.github.io/2024/09/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%BF%85%E5%A4%87/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -623,8 +648,8 @@ gitment.render('gitment-content');
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://charlotte21110.github.io/2024/09/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E8%B7%AF%E5%BF%85%E5%A4%87/';
-        this.page.identifier = '/2024/09/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E8%B7%AF%E5%BF%85%E5%A4%87/';
+        this.page.url = 'https://charlotte21110.github.io/2024/09/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%BF%85%E5%A4%87/';
+        this.page.identifier = '/2024/09/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%BF%85%E5%A4%87/';
         this.page.title = '计算机网络必备';
     };
     let disqus_shortname = '';
@@ -893,7 +918,7 @@ gitment.render('gitment-content');
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2024/09/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E8%B7%AF%E5%BF%85%E5%A4%87/">
+                <a href="/2024/09/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%BF%85%E5%A4%87/">
                     <div class="card-image">
                         
                         
