@@ -4,8 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="回忆录之我的四段前端实习经历, 海棠听风">
-    <meta name="description" content="前言作为第一篇在博客里的日记叙事，我想记录下我大学本科期间的前端学习和去工作的心路历程。我现在还没有毕业，大概还有小半年的时间，就要变成那种所谓的都市丽人（？）bushi，其实就是职场牛马。感慨时间过得好快，我都还没有怎么玩够，大学就要过去">
+    <meta name="keywords" content="异步校验与表单处理, 海棠听风">
+    <meta name="description" content="真切的感受到了async 和await在实际开发的作用有多大，举个代码片段例子，一个简单的表单校验加按钮触发控制
+123456789101112131415161718192021222324252627282930313233  cons">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>回忆录之我的四段前端实习经历 | 海棠听风</title>
+    <title>异步校验与表单处理 | 海棠听风</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <style>
@@ -356,12 +357,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">回忆录之我的四段前端实习经历</h1>
+                    <h1 class="description center-align post-title">异步校验与表单处理</h1>
                 </div>
             </div>
         </div>
@@ -385,23 +386,14 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/daily/">
-                                <span class="chip bg-color">daily</span>
+                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                <span class="chip bg-color">前端</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" class="post-category">
-                                碎碎念
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -410,7 +402,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2025-02-19
+                    2025-03-18
                 </div>
                 
 
@@ -431,33 +423,19 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>作为第一篇在博客里的日记叙事，我想记录下我大学本科期间的前端学习和去工作的心路历程。我现在还没有毕业，大概还有小半年的时间，就要变成那种所谓的都市丽人（？）bushi，其实就是职场牛马。感慨时间过得好快，我都还没有怎么玩够，大学就要过去了。</p>
-<p>我在大学里也有一些其他专业的朋友，平时经常一起玩的，他们给我的感觉就是大学过得美滋滋啊，打游戏的打游戏，画画的画画，也有去到处旅游的（哎，而我好像不知道在追赶些什么东西，以尝试弥补我学历的缺陷，<strong>或者是性别作为女生的劣势</strong>。（有很多同事说我卷，可是又亲口承认想招男开发，但我认为这是父权社会下的极大不公平，而且前端这种切图调包的活不就是女生更合适吗？）</p>
-<h2 id="学前端的路"><a href="#学前端的路" class="headerlink" title="学前端的路"></a>学前端的路</h2><p>我好像一直都是那种很听话的人，所以大家说啥就容易随波逐流地听着去做了。刚上大一的时候前端是什么都不知道，然后学校老师说，呐呐校里面有个社团啥的，里面计算机大佬很厉害，大家要争取进去哦。然后我就信了，报那个社团，跟着里面的学长学姐做考核，里面有算法组，前端组，后端组，产品组、设计组等等，听起来是不是很像一个项目小队，也为我后面组队做项目奠定了成员基础。</p>
-<p>然后我就报了算法队和前端队，根据里面的人安排的任务去做。依然记得大一的寒假的时候，过年期间宅在家里看黑马网课（不要笑我），学会了基础之后，就去模仿官网复刻一个出来（仓库里有在线演示b站链接和源码），有不懂也会上网请教各种大佬，看见自己想做的效果一点点实现的成就感还挺高的。后面很多时间，比如过端午节等周末期间，我都是坐在宿舍里看电脑学东西或者弄一些玩具类的项目，但没有放到github……有时候上课上马原那种“水课”的时候，就会带电脑，手机，一整节去看网课学前端。</p>
-<p>然后大二一整年在学Java，Springboot的东西，我当时就是想要去做一个后端，两边一起投，（差点去全栈了）只是机缘巧合期间，拿了前端的第一份实习offer，就走上了这条路。</p>
-<p>再后就是接触八股文，面试题这种东西，（我真的好讨厌啊，但是应试模式下不得不去关注学习，尤其是各大厂的笔试题，我们一致认为是门槛提高后的选拔手段罢了，实质开发也用不到）</p>
-<p>大三大四就是在企业接受实战了，外加空闲时间跟朋友们组队写项目，这种团结合作一起把想法实现的过程还挺开心的。</p>
-<p>好像也没什么特别的，总结起来就是看课，学着自己敲代码，看有意思的东西去模仿，跟同行或大厂的朋友们交流，不断练习，看书看各种资迅。</p>
-<h2 id="实习生活"><a href="#实习生活" class="headerlink" title="实习生活"></a>实习生活</h2><p>我第一次实习是在大一大二期间来着，当时是被专业课的前端老师挑了出来然后推荐到实验室里，然后实验室跟广州一家互联网公司合作，我就成了里面的一员，跟几个同学在假期时间里去他那边实习，这家A公司虽然不是很大，但是在当时的我们看来，很满足，每一天都在这学东西，做测试做前端，写各类报告等等完成他们给的任务。因为mt给我们包住，所以我们几个同学住在一起生活和工作，试过加班到晚上两点，也试过半夜跟mt一起到外面喝酒吃烧烤，周末也试过团建和唱K自助餐，总体来讲第一次体验上班，劳逸结合，那段时间挺开心也收获挺大的。后面可能没注意身体熬夜和自己给压力了就生病了还是开学啥的，就回家了，其实还有点后悔不多待一会。</p>
-<p>大三的时候去了B公司，这个时候我有了更加充足的技能去做各种需求了，也慢慢认识了很多学历比我好的同学和大厂的朋友们，跟一些有经验的开发者去学处理企业级的真实场景。我还记得第一天到B公司的时候，大家都对我特别好，MT和隔壁前端同事让我在旁边椅子上安心坐着，他们就帮我搬电脑，插网线，弄好台式机和键盘（笑鼠），带我熟悉各种环境，还在我分支上帮我改bug收尾（说来惭愧，刚开始不熟悉，后面自己能独立完成大部分事情了）。午饭期间我们小组的几个产品开发测试会一起吃饭聊天，也是我一天最放松和开心的时刻。现在依然记得有趣的Steven同事看到chiikawa就分享给我（x。这段有点像白月光的存在。</p>
-<p>后面离职的时候我还偷偷流眼泪，说真的挺不舍得B公司的，氛围特别特别好，但是我选择主动离职的原因是，我想强迫自己跳出舒适圈，去看看其他的环境，接触新的技术，当时的我年纪还小，<del>多少有点对自己过于自信</del></p>
-<p>然后去了C公司，mt是个很年轻的潮男，后端有个声音很甜蜜人也很可爱的小姐姐，组里也有好几个应届生，相处也挺愉快的，就是活不少，大家都很拼命干。但是我跟这位mt仿佛有点八字不合，他个人性格很喜欢遮遮掩掩，回答问题时故意讲一半不说一半，以为这样子能启发别人思考，其实真的很严重影响工作进度。而且喜欢对两个下属一对一去会议室开会diss一下全程否定，他想通过这种方式来施加压力让我跟另一个正职下属更卖命一点干。实话说这种方式挺让人不舒服的。不过也是感谢教过我不少东西吧。</p>
-<p>D公司的实习经历是我接触的项目最多，技术成长比较快的时候，领导和小组氛围都特别好，大家互相帮忙很耐心地解决需求问题，推动工作进展，环境舒适，当时我坐的一整层都是技术和开发，去饭堂吃饭有种隔壁都是程序员的感觉（笑）。</p>
-<h2 id="体验与技术对比"><a href="#体验与技术对比" class="headerlink" title="体验与技术对比"></a>体验与技术对比</h2><p>至今为止我接触过的前端技术栈有react，RN，vue2，vue3，next.js，umi，electron，和各类组件库等等，也正因为有四段有小有大的实习经历，才让我体会到了不同的流程规范，项目风格，设计模式，封装复用的思路，工程化和性能优化方案等等。很大的区别就是基建和自研的各种中台与组件等，比如埋点数据中心上报平台，多语言平台之类。</p>
-<p>我见过最拉最讨厌的项目（可能也是正职不想做交给实习生的原因吧），是个next项目，从外包人员手里拿回来的，里面的webpack配置和相关业务代码比较不合理而混乱，可维护性很差，没有热更新，一直都靠每次用npm run build打包一两分钟，然后再用http server去把这个dist文件夹下的东西启动到本地看，这个时候如果再想改动一些样式，则要重新打包，重新看，整个过程就耗费三分钟，开发起来效率非常低，十分吃力。毕竟它没有热更新。</p>
-<p>期间我多次问我的导师为什么会这样，他没有很清晰地回答过，也可能是不知道或者没眼看吧，因为他已经把这个项目完全交给我负责了。我很不爽就多次看里面的配置，上网找原因，跟其他大厂朋友探讨一下，看里面的源码（虽然不太懂），看报错，一点点去排查。终于，找到了原因，是某一块代码执行报错导致的next start失败。</p>
-<p>但是新的问题出现了，就是它启动依旧很慢，180s，我需要对他进行重构，将老webpack迁移到vite……才是比较好的解决方案。</p>
-<p>也见过比较舒服的代码，它封装复用了很多组件，业务与通用解耦，总的来说很规范和干净，维护起来也比较快，代码特别清晰易懂。</p>
-<p>但总体上来讲react的写法大多都类似，我个人也喜欢写这个框架搭配函数组件去开发，反而vue的话风格很多，显得乱乱的。技术就都这些，只不过用不同的逻辑拼凑起来不一样的业务罢了，我认为实习最难的点就是<strong>对于业务的理解上</strong>，不同的项目负责不同的业务，<em>很多时候做需求要想清楚这个逻辑，以前的写法是怎么回事，以及当时为什么要这么写，我这一次的改动要不要兼容旧数据，以及这次的改动是哪里。</em>代码逻辑看懂了，但是为什么要这样子安排还是得跟公司的老员工去请教。只有明白了这些系统是怎么用的，才能更好的开发和定位日常问题。而我觉得老员工和新员工最大的区别也是对公司内部和业务系统的掌握程度。</p>
-<p>而技术的话可能并不是特别值钱的东西，也学不完，同年限的话大家的水平都很类似，有人拿的薪资更多只是因为ta在更大更有钱的平台。</p>
-<h2 id="遗憾的点"><a href="#遗憾的点" class="headerlink" title="遗憾的点"></a>遗憾的点</h2><p>想起来最可惜的就是我去实习开始得比较晚，我是大三下才去实习的，我应该从大二的暑假开始准备找，大三上就去，时间线比较晚，准备得也不够充分。大一大二也有点摆烂，没有尽早选好前端这个目标，一开始还去往后端这个方向努力了，但是后面综合后端研发招人对女生特别不友好+个人兴趣的原因+刚好碰上一个全栈的微信过来的技术面试官招了我去做前端便决心往这条路走。</p>
-<p>还有一个后悔的点就是大一下的暑假有一段时间特别想不开，因为有个喜欢的男生莫名好几周不理我，我情绪极度焦虑+悲观，沉迷于他当时带我入坑的的游戏最终幻想14中，那段时间学习状态非常差，几乎放弃了一个非常重要且适合我的前端最终笔面与入营机会，拖慢了后面的学习与求职进度。</p>
-<p>得到的教训是：</p>
-<blockquote>
-<p>没有必要因为任何人去破坏自己的心情，内耗是最没意义的事情，事业终究大于感情。</p>
-</blockquote>
-<p>也许，一切都是上头的安排吧。</p>
+                <p>真切的感受到了async 和await在实际开发的作用有多大，举个代码片段例子，一个简单的表单校验加按钮触发控制</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">  const validateFields = async () =&gt; &#123;</span><br><span class="line">  try &#123;</span><br><span class="line">    // 触发表单验证</span><br><span class="line">    await form.validateFields();</span><br><span class="line">    return true;</span><br><span class="line">  &#125; catch (error) &#123;</span><br><span class="line">    if (form.getFieldsError()) &#123;</span><br><span class="line">      message.error(t(&#x27;normal.searchLimit&#x27;));</span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">const &#123; run: getList &#125; = useRequest(</span><br><span class="line">  async (options?: any) =&gt; &#123;</span><br><span class="line">    const &#123; pageNum = defaultPageNum, pageSize = curPageSize &#125; = options || &#123;&#125;;</span><br><span class="line">    const requestConfig = &#123;</span><br><span class="line">      pageNum,</span><br><span class="line">      serviceType: 1,</span><br><span class="line">      pageSize,</span><br><span class="line">      ...getFormParams(),</span><br><span class="line">    &#125;;</span><br><span class="line">    exportParams.current = requestConfig;</span><br><span class="line">    if (options) &#123;</span><br><span class="line">      setCurPageNum(options.pageNum);</span><br><span class="line">      setCurPageSize(options.pageSize);</span><br><span class="line">    &#125;</span><br><span class="line">    const isValid = await validateFields();</span><br><span class="line">    if (isValid) &#123;</span><br><span class="line">      return getRecordList(requestConfig);</span><br><span class="line">    &#125;</span><br><span class="line">    return null;</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+
+<p>validateFields的函数返回值是一个异步函数来的，所以返回的是一个promise对象，而不是一个普通的函数，所以不能够直接调用validateFields（）来获取返回的值，而是要加await修饰符等待它执行完毕。但是同步的await去修饰的函数要运行的时候，外部必须加上async去搭配使用的，因为它只允许在异步函数里面使用，不然会出现问题。</p>
+<p>另外表单验证可以使用自带的rule，而不需要使用到自定义的validateStatus的写法。比如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Form.Item name=&#123;[&#x27;selectSearch&#x27;, &#x27;fieldValue&#x27;]&#125; className=&#123;styles.input&#125; validateStatus=&#123;formErrors.fieldValue ? &#x27;error&#x27; : &#x27;&#x27;&#125; help=&#123;formErrors.fieldValue&#125;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>而是这样的方式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">  return (</span><br><span class="line">    &lt;div className=&quot;container&quot;&gt;</span><br><span class="line">      &lt;PageContainer title=&#123;t(&#x27;subscribe.record&#x27;)&#125;&gt;</span><br><span class="line">        &lt;Form layout=&quot;inline&quot; form=&#123;form&#125; initialValues=&#123;&#123; status: [&#x27;active&#x27;] &#125;&#125; validateTrigger=&#123;[]&#125;&gt;</span><br><span class="line">          &lt;Form.Item name=&quot;sellerId&quot; rules=&#123;formErrorRule&#125;&gt;</span><br><span class="line">            &lt;SellerPicker style=&#123;&#123; width: &#x27;150px&#x27; &#125;&#125; /&gt;</span><br><span class="line">          &lt;/Form.Item&gt;</span><br><span class="line">          &lt;Form.Item name=&quot;subType&quot; rules=&#123;formErrorRule&#125;&gt;</span><br><span class="line">            &lt;Select style=&#123;&#123; width: &#x27;150px&#x27; &#125;&#125; placeholder=&#123;t(&#x27;seller.subscribeType&#x27;)&#125;&gt;</span><br><span class="line">              &lt;Select.Option value=&quot;trial&quot;&gt;&#123;t(&#x27;seller.tryOut&#x27;)&#125;&lt;/Select.Option&gt;</span><br><span class="line">              &lt;Select.Option value=&quot;paid&quot;&gt;&#123;t(&#x27;seller.pay&#x27;)&#125;&lt;/Select.Option&gt;</span><br><span class="line">              &lt;Select.Option value=&quot;free&quot;&gt;&#123;t(&#x27;subscribe.free&#x27;)&#125;&lt;/Select.Option&gt;</span><br><span class="line">            &lt;/Select&gt;</span><br><span class="line">          &lt;/Form.Item&gt;</span><br><span class="line">          // 省略</span><br><span class="line">          &lt;div style=&#123;&#123; display: &#x27;flex&#x27;, gap: &#x27;5px&#x27;, flexWrap: &#x27;wrap&#x27; &#125;&#125;&gt;</span><br><span class="line">            &lt;AuthButton type=&quot;primary&quot; authCode=&quot;12:07:01&quot; onClick=&#123;search&#125;&gt;</span><br><span class="line">              &#123;t(&#x27;normal.search&#x27;)&#125;</span><br><span class="line">            &lt;/AuthButton&gt;</span><br><span class="line">            &lt;AuthButton authCode=&quot;12:07:02&quot; onClick=&#123;onReset&#125;&gt;</span><br><span class="line">              &#123;t(&#x27;normal.reset&#x27;)&#125;</span><br><span class="line">            &lt;/AuthButton&gt;</span><br><span class="line">            &lt;AuthButton authCode=&quot;12:07:03&quot; onClick=&#123;toggle&#125; loading=&#123;exporting&#125;&gt;</span><br><span class="line">              &#123;t(&#x27;normal.export&#x27;)&#125;</span><br><span class="line">            &lt;/AuthButton&gt;</span><br><span class="line">            &#123;renderElement()&#125;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;/Form&gt;</span><br><span class="line">        &lt;br /&gt;</span><br><span class="line">        &lt;Table rowKey=&quot;id&quot; scroll=&#123;&#123; x: 2000 &#125;&#125; columns=&#123;columns&#125; dataSource=&#123;list&#125; pagination=&#123;pageConfig&#125; /&gt;</span><br><span class="line">      &lt;/PageContainer&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="attr">formErrorRule</span>: <span class="title class_">Rule</span>[] = [</span><br><span class="line">  <span class="function">(<span class="params">&#123; getFieldsValue &#125;</span>) =&gt;</span> (&#123;</span><br><span class="line">    <span class="title function_">validator</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="keyword">const</span> &#123; sellerId, subType, subBizType, status &#125; = <span class="title function_">getFieldsValue</span>();</span><br><span class="line">      <span class="keyword">if</span> (!sellerId &amp;&amp; !subType &amp;&amp; !subBizType &amp;&amp; status.<span class="property">length</span> === <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="title class_">Promise</span>.<span class="title function_">reject</span>();</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> <span class="title class_">Promise</span>.<span class="title function_">resolve</span>();</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;),</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+
+<p>以满足某种业务场景，在需要用的校验的时候，就去使用那个方法。</p>
 
                 
             </div>
@@ -484,7 +462,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://charlotte21110.github.io/2025/02/19/%E5%9B%9E%E5%BF%86%E5%BD%95%E4%B9%8B%E6%88%91%E7%9A%84%E5%9B%9B%E6%AE%B5%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E7%BB%8F%E5%8E%86/">https://charlotte21110.github.io/2025/02/19/%E5%9B%9E%E5%BF%86%E5%BD%95%E4%B9%8B%E6%88%91%E7%9A%84%E5%9B%9B%E6%AE%B5%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E7%BB%8F%E5%8E%86/</a>
+                    <a href="https://charlotte21110.github.io/2025/03/18/%E5%BC%82%E6%AD%A5%E6%A0%A1%E9%AA%8C%E4%B8%8E%E8%A1%A8%E5%8D%95%E5%A4%84%E7%90%86/">https://charlotte21110.github.io/2025/03/18/%E5%BC%82%E6%AD%A5%E6%A0%A1%E9%AA%8C%E4%B8%8E%E8%A1%A8%E5%8D%95%E5%A4%84%E7%90%86/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -522,8 +500,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/daily/">
-                                    <span class="chip bg-color">daily</span>
+                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                    <span class="chip bg-color">前端</span>
                                 </a>
                             
                         </div>
@@ -601,7 +579,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2025-02-19T22-11-45',
+        id: '2025-03-18T22-10-51',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -625,7 +603,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Wed Feb 19 2025 22:11:45 GMT+0800',
+    id: 'Tue Mar 18 2025 22:10:51 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -650,9 +628,9 @@ gitment.render('gitment-content');
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://charlotte21110.github.io/2025/02/19/%E5%9B%9E%E5%BF%86%E5%BD%95%E4%B9%8B%E6%88%91%E7%9A%84%E5%9B%9B%E6%AE%B5%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E7%BB%8F%E5%8E%86/';
-        this.page.identifier = '/2025/02/19/%E5%9B%9E%E5%BF%86%E5%BD%95%E4%B9%8B%E6%88%91%E7%9A%84%E5%9B%9B%E6%AE%B5%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E7%BB%8F%E5%8E%86/';
-        this.page.title = '回忆录之我的四段前端实习经历';
+        this.page.url = 'https://charlotte21110.github.io/2025/03/18/%E5%BC%82%E6%AD%A5%E6%A0%A1%E9%AA%8C%E4%B8%8E%E8%A1%A8%E5%8D%95%E5%A4%84%E7%90%86/';
+        this.page.identifier = '/2025/03/18/%E5%BC%82%E6%AD%A5%E6%A0%A1%E9%AA%8C%E4%B8%8E%E8%A1%A8%E5%8D%95%E5%A4%84%E7%90%86/';
+        this.page.title = '异步校验与表单处理';
     };
     let disqus_shortname = '';
 
@@ -915,9 +893,10 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2025/03/18/%E5%BC%82%E6%AD%A5%E6%A0%A1%E9%AA%8C%E4%B8%8E%E8%A1%A8%E5%8D%95%E5%A4%84%E7%90%86/">
                     <div class="card-image">
@@ -935,9 +914,9 @@ gitment.render('gitment-content');
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2025-03-18
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-03-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -946,6 +925,7 @@ gitment.render('gitment-content');
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -964,13 +944,13 @@ gitment.render('gitment-content');
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/12/08/%E6%89%8B%E5%86%99%E8%BD%AE%E6%92%AD%E5%9B%BE/">
+                <a href="/2025/02/19/%E5%9B%9E%E5%BF%86%E5%BD%95%E4%B9%8B%E6%88%91%E7%9A%84%E5%9B%9B%E6%AE%B5%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E7%BB%8F%E5%8E%86/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="手写轮播图">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="回忆录之我的四段前端实习经历">
                         
-                        <span class="card-title">手写轮播图</span>
+                        <span class="card-title">回忆录之我的四段前端实习经历</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -981,14 +961,14 @@ gitment.render('gitment-content');
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-12-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-02-19
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
+                            <a href="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" class="post-category">
+                                    碎碎念
                                 </a>
                             
                             
@@ -998,8 +978,8 @@ gitment.render('gitment-content');
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JS/">
-                        <span class="chip bg-color">JS</span>
+                    <a href="/tags/daily/">
+                        <span class="chip bg-color">daily</span>
                     </a>
                     
                 </div>
